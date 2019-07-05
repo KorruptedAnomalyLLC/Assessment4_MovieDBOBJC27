@@ -16,10 +16,6 @@ static NSString * const apiKey = @"621c011ff27583f12f2c0f2fce7cd6d8";
 
 @implementation AJDWMovieController
 
-//Source of truth
-
-
-//Singleton
 + (instancetype)sharedInstance
 {
     static AJDWMovieController *sharedInstance = nil;
@@ -30,19 +26,17 @@ static NSString * const apiKey = @"621c011ff27583f12f2c0f2fce7cd6d8";
     return sharedInstance;
 }
 
-//CRUD (network fetch)
+
 - (void)fetchMoviesWithSearch:(NSString *)search completion:(void (^)(NSArray<AJDWMovie *> *))completion
 {
-    //construct URL
+
     NSURL *baseUrl = [NSURL URLWithString:baseUrlString];
     NSURLQueryItem *apiQuery = [[NSURLQueryItem alloc] initWithName:api value:apiKey];
     NSURLQueryItem *searchQuery = [[NSURLQueryItem alloc] initWithName:query value:search];
     NSURLComponents *components = [NSURLComponents componentsWithURL:baseUrl resolvingAgainstBaseURL:TRUE];
     components.queryItems = [[NSArray alloc] initWithObjects:(apiQuery), (searchQuery), nil];
     NSURL *finalUrl = components.URL;
-    //testing URL construction
     NSLog(@"%@", [finalUrl absoluteString]);
-    //datatask and completion
     [[[NSURLSession sharedSession] dataTaskWithURL:finalUrl completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (error) {
             NSLog(@"There was an error in %s: %@, %@", __PRETTY_FUNCTION__, error, [error localizedDescription]);
@@ -64,11 +58,10 @@ static NSString * const apiKey = @"621c011ff27583f12f2c0f2fce7cd6d8";
             completion(moviesArray);
         }
     }] resume];
-}//END OF MOVIE FETCH
+}
 
 - (void)fetchPosterForMovie:(AJDWMovie *)movie completion:(void (^)(UIImage * _Nullable))completion
 {
-    //build URL
     
     NSLog(@"%@", movie.posterPath);
     NSURL *baseUrl = [NSURL URLWithString:baseImageUrl];
@@ -77,20 +70,16 @@ static NSString * const apiKey = @"621c011ff27583f12f2c0f2fce7cd6d8";
         return;
     }
     NSURL *fullUrl = [baseUrl URLByAppendingPathComponent:movie.posterPath];
-    //test print the constructed URL
     NSLog(@"%@", [fullUrl absoluteString]);
-    //data fetch and completion
+    
     [[[NSURLSession sharedSession] dataTaskWithURL:fullUrl completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (error) {
             NSLog(@"%@", error.localizedDescription);
             completion(nil);
             return;
         }
-        
-        
         UIImage *movieImage = [UIImage imageWithData:data];
         completion(movieImage);
     }] resume];
-}//END OF image fetch
-
+}
 @end

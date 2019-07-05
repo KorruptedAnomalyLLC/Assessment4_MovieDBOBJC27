@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="esZ-Ac-POC">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,19 +10,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Movie Search View Controller-->
         <scene sceneID="wHq-Zi-duz">
             <objects>
-                <viewController id="esZ-Ac-POC" sceneMemberID="viewController">
+                <viewController id="esZ-Ac-POC" customClass="MovieSearchViewController" customModule="MovieDBAssessmentiOS27" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c2I-5R-lpA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="abz-q9-Z3u">
                                 <rect key="frame" x="8" y="116" width="398" height="738"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexColor" red="0.094605518590000007" green="0.81193329020000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="153" id="0G7-6A-d2A">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="movieCell" rowHeight="153" id="0G7-6A-d2A" customClass="MovieCellTableViewCell" customModule="MovieDBAssessmentiOS27" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="398" height="153"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0G7-6A-d2A" id="nuJ-fg-xwg">
@@ -30,30 +33,29 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nwc-bj-0OB">
-                                                    <rect key="frame" x="20" y="14.5" width="124" height="124"/>
+                                                    <rect key="frame" x="28" y="19" width="114.5" height="114.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="124" id="fbC-hB-Jy9"/>
-                                                        <constraint firstAttribute="width" constant="124" id="vJ8-A3-BLI"/>
+                                                        <constraint firstAttribute="width" secondItem="Nwc-bj-0OB" secondAttribute="height" multiplier="1:1" id="KXz-lF-dW8"/>
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="RbA-Cs-f4W">
-                                                    <rect key="frame" x="152" y="19" width="218" height="115"/>
+                                                    <rect key="frame" x="150.5" y="19" width="219.5" height="115"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(title)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MO0-Jm-gJc">
-                                                            <rect key="frame" x="0.0" y="0.0" width="218" height="31.5"/>
-                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="219.5" height="31.5"/>
+                                                            <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="24"/>
                                                             <color key="textColor" red="0.094605518590000007" green="0.81193329020000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(rating info)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VDK-y1-4Xq">
-                                                            <rect key="frame" x="0.0" y="41.5" width="218" height="32"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <rect key="frame" x="0.0" y="41.5" width="219.5" height="32"/>
+                                                            <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="17"/>
                                                             <color key="textColor" red="0.094605518590000007" green="0.81193329020000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(summary)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7FG-6M-boZ">
-                                                            <rect key="frame" x="0.0" y="83.5" width="218" height="31.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                            <rect key="frame" x="0.0" y="83.5" width="219.5" height="31.5"/>
+                                                            <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="15"/>
                                                             <color key="textColor" red="0.094605518590000007" green="0.81193329020000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -61,25 +63,35 @@
                                                     <viewLayoutGuide key="safeArea" id="I5q-Za-ldj"/>
                                                 </stackView>
                                             </subviews>
-                                            <color key="backgroundColor" red="1" green="0.3736549139" blue="0.047485314610000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="Nwc-bj-0OB" firstAttribute="leading" secondItem="nuJ-fg-xwg" secondAttribute="leadingMargin" id="CK6-zc-bDd"/>
+                                                <constraint firstItem="Nwc-bj-0OB" firstAttribute="top" secondItem="nuJ-fg-xwg" secondAttribute="topMargin" constant="8" id="H7Y-HR-9UU"/>
                                                 <constraint firstItem="RbA-Cs-f4W" firstAttribute="top" secondItem="nuJ-fg-xwg" secondAttribute="topMargin" constant="8" id="ZyF-LY-Gh8"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="RbA-Cs-f4W" secondAttribute="trailing" constant="8" id="bbN-hq-oDV"/>
                                                 <constraint firstItem="RbA-Cs-f4W" firstAttribute="leading" secondItem="Nwc-bj-0OB" secondAttribute="trailing" constant="8" id="cgC-Of-Xkr"/>
+                                                <constraint firstItem="RbA-Cs-f4W" firstAttribute="leading" secondItem="Nwc-bj-0OB" secondAttribute="trailing" constant="8" id="hQ1-WB-1Y0"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="RbA-Cs-f4W" secondAttribute="bottom" constant="8" id="iD0-dM-sH9"/>
+                                                <constraint firstItem="Nwc-bj-0OB" firstAttribute="leading" secondItem="nuJ-fg-xwg" secondAttribute="leadingMargin" constant="8" id="vpP-eQ-HTK"/>
                                                 <constraint firstItem="Nwc-bj-0OB" firstAttribute="centerY" secondItem="nuJ-fg-xwg" secondAttribute="centerY" id="zW3-il-YN6"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="moviePosterImageView" destination="Nwc-bj-0OB" id="w2o-uZ-EHr"/>
+                                            <outlet property="movieTitleLabel" destination="MO0-Jm-gJc" id="3si-Je-Yai"/>
+                                            <outlet property="ratingLabel" destination="VDK-y1-4Xq" id="Tp6-Uh-alc"/>
+                                            <outlet property="summaryLabel" destination="7FG-6M-boZ" id="Eqt-St-eu8"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="zhn-59-Y9a">
+                            <searchBar contentMode="redraw" placeholder="Search for a movie..." translatesAutoresizingMaskIntoConstraints="NO" id="zhn-59-Y9a">
                                 <rect key="frame" x="20" y="54" width="374" height="56"/>
+                                <color key="backgroundColor" red="0.99851284900000004" green="0.0" blue="0.68277483269999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="barTintColor" red="0.28692100250000002" green="0.0" blue="0.184871849" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="zhn-59-Y9a" firstAttribute="leading" secondItem="1y0-t4-9Si" secondAttribute="leading" constant="20" id="F1q-nq-qYF"/>
                             <constraint firstItem="1y0-t4-9Si" firstAttribute="trailing" secondItem="abz-q9-Z3u" secondAttribute="trailing" constant="8" id="LwA-wI-S7H"/>
@@ -91,6 +103,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1y0-t4-9Si"/>
                     </view>
+                    <connections>
+                        <outlet property="searchBar" destination="zhn-59-Y9a" id="Ek5-ze-SMp"/>
+                        <outlet property="tableView" destination="abz-q9-Z3u" id="odF-Yw-aNN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hv9-zY-qUn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

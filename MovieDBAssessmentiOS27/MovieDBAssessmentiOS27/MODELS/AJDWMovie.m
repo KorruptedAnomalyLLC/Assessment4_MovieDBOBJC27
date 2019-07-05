@@ -35,7 +35,7 @@
     NSNumber *rating = dictionary[@"vote_average"];
     NSString *posterPath = dictionary[@"poster_path"];
     
-    return [self initWithTitle:movieTitle movieDescription:posterPath posterPath:posterPath votes:votes ratings:rating];
+    return [self initWithTitle:movieTitle movieDescription:movieDescription posterPath:posterPath votes:votes rating:rating];
 }
 
 @end

@@ -13,12 +13,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AJDWMovieController : NSObject
 
-// Singleton
 + (instancetype) sharedInstance;
 
-// Network calls       (CRUD)
 - (void) fetchMoviesWithSearch:(NSString *)search completion:(void (^) (NSArray<AJDWMovie *> * movies)) completion;
-- (void) fetchPostForMovie:(AJDWMovie *)movie completion:(void (^) (UIImage * _Nullable image))completion;
+- (void) fetchPosterForMovie:(AJDWMovie *)movie completion:(void (^) (UIImage * _Nullable image))completion;
 
 @end
 

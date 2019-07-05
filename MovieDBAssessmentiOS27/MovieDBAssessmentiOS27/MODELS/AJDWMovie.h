@@ -15,10 +15,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy, readonly) NSString *movieTitle;
 @property (nonatomic, copy, readonly, nullable) NSString *movieDescription;
 @property (nonatomic, copy, readonly, nullable) NSString *posterPath;
-@property (nonatomic, copy, readonly, nullable) NSNumber *votes;
+@property (nonatomic, readonly, nullable) NSNumber *votes;
 @property (nonatomic, copy, readonly, nullable) NSNumber *rating;
 
-- (instancetype) initWithTitle:(NSString *)title movieDescription:(NSString *)movieDescription posterPath:(NSString *)posterPath votes:(NSNumber *)votes ratings:(NSNumber *)rating;
+- (instancetype) initWithTitle:(NSString *)title movieDescription:(NSString *)movieDescription posterPath:(NSString *)posterPath votes:(NSNumber *)votes rating:(NSNumber *)rating;
 
 @end
 
