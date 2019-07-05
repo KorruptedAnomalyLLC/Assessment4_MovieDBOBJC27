@@ -12,6 +12,8 @@
 		0C735B7022CFA1BC002E7CA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C735B6F22CFA1BC002E7CA6 /* Assets.xcassets */; };
 		0C735B7322CFA1BC002E7CA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C735B7122CFA1BC002E7CA6 /* LaunchScreen.storyboard */; };
 		0C735B7622CFA1BC002E7CA6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C735B7522CFA1BC002E7CA6 /* main.m */; };
+		0CAD56C722CFA2F0004FD912 /* AJDWMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CAD56C622CFA2F0004FD912 /* AJDWMovie.m */; };
+		0CAD56CA22CFAA48004FD912 /* AJDWMovieController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CAD56C922CFAA48004FD912 /* AJDWMovieController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,10 @@
 		0C735B7222CFA1BC002E7CA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C735B7422CFA1BC002E7CA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C735B7522CFA1BC002E7CA6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0CAD56C522CFA2F0004FD912 /* AJDWMovie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AJDWMovie.h; sourceTree = "<group>"; };
+		0CAD56C622CFA2F0004FD912 /* AJDWMovie.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AJDWMovie.m; sourceTree = "<group>"; };
+		0CAD56C822CFAA48004FD912 /* AJDWMovieController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AJDWMovieController.h; sourceTree = "<group>"; };
+		0CAD56C922CFAA48004FD912 /* AJDWMovieController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AJDWMovieController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +93,8 @@
 		0C735B7E22CFA1FF002E7CA6 /* MODELS */ = {
 			isa = PBXGroup;
 			children = (
+				0CAD56C522CFA2F0004FD912 /* AJDWMovie.h */,
+				0CAD56C622CFA2F0004FD912 /* AJDWMovie.m */,
 			);
 			path = MODELS;
 			sourceTree = "<group>";
@@ -118,6 +126,8 @@
 		0C735B8222CFA237002E7CA6 /* MODEL CONTROLLERS */ = {
 			isa = PBXGroup;
 			children = (
+				0CAD56C822CFAA48004FD912 /* AJDWMovieController.h */,
+				0CAD56C922CFAA48004FD912 /* AJDWMovieController.m */,
 			);
 			path = "MODEL CONTROLLERS";
 			sourceTree = "<group>";
@@ -148,6 +158,7 @@
 		0C735B5B22CFA1BA002E7CA6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = AJDW;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Austin West";
 				TargetAttributes = {
@@ -193,6 +204,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C735B7622CFA1BC002E7CA6 /* main.m in Sources */,
+				0CAD56C722CFA2F0004FD912 /* AJDWMovie.m in Sources */,
+				0CAD56CA22CFAA48004FD912 /* AJDWMovieController.m in Sources */,
 				0C735B6822CFA1BA002E7CA6 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,7 +350,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5Z9AZ3J86W;
-				INFOPLIST_FILE = MovieDBAssessmentiOS27/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MovieDBAssessmentiOS27/RESOURCES/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -354,7 +367,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5Z9AZ3J86W;
-				INFOPLIST_FILE = MovieDBAssessmentiOS27/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MovieDBAssessmentiOS27/RESOURCES/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
